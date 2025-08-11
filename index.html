@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <input type="checkbox" id="mobile-menu-checkbox" hidden />
+    <header class="m-container">
+      <div class="logo">
+        <span class="web">WEB</span><span class="Studio">STUDIO</span>
+      </div>
+      <label for="mobile-menu-checkbox" class="menu-button">
+        <svg class="hero-icons">
+          <use
+            xlink:href="images/icons.svg/symbol-defs.svg#icon-heroicons"
+          ></use>
+        </svg>
+      </label>
+    </header>
+    <nav class="mobile-nav">
+      <label for="mobile-menu" class="menu-close">
+        <svg class="icon-close">
+          <use xlink:href="images/icons.svg/symbol-defs.svg#icon-close1"></use>
+        </svg>
+      </label>
+      <ul class="mobile-list">
+        <li>Studio</li>
+        <li>Portfolio</li>
+        <li>Contact</li>
+      </ul>
+      <address class="mobile-adres">
+        <a href="#">info@devstudio.com</a>
+        <a href="#">+11(000)111-11-11</a>
+      </address>
+      <nav class="mobile-menu-social-icon">
+        <svg class="iconmen">
+          <use xlink:href="images/icons.svg/symbol-defs.svg#icon-insta"></use>
+        </svg>
+        <svg class="iconmen">
+          <use xlink:href="images/icons.svg/symbol-defs.svg#icon-twtr"></use>
+        </svg>
+        <svg class="iconmen">
+          <use xlink:href="images/icons.svg/symbol-defs.svg#icon-face"></use>
+        </svg>
+        <svg class="iconmen">
+          <use xlink:href="images/icons.svg/symbol-defs.svg#icon-lnkd"></use>
+        </svg>
+      </nav>
+    </nav>
+    <main>
+      <section class="baslik">
+        <h1>Effective Solutions for Your Business</h1>
+        <button type="submit">Order Service</button>
+        <div class="backdrop">
+          <div class="modal">
+            <button type="button" class="modal-close">
+              <svg class="closeicon">
+                <use
+                  xlink:href="images/icons.svg/symbol-defs.svg#icon-close"
+                ></use>
+              </svg>
+            </button>
+            <form>
+              <p>Leave your contacts and we will call you back</p>
+              <div class="formod">
+                <label for="name">Name</label>
+                <div class="formin">
+                  <svg class="formsvg">
+                    <use
+                      xlink:href="images/icons.svg/symbol-defs.svg#icon-person-black-18dp-1"
+                    ></use>
+                  </svg>
+                  <input type="text" name="username" />
+                </div>
+              </div>
+              <div class="formod">
+                <label for="Phone">Phone</label>
+                <div class="formin">
+                  <svg class="formsvg">
+                    <use
+                      xlink:href="images/icons.svg/symbol-defs.svg#icon-phone-black-18dp-1"
+                    ></use>
+                  </svg>
+                  <input type="number" name="userphone" />
+                </div>
+              </div>
+
+              <div class="formod">
+                <label for="email">E-mail</label>
+                <div class="formin">
+                  <svg class="formsvg">
+                    <use
+                      xlink:href="images/icons.svg/symbol-defs.svg#icon-email-black-18dp-1"
+                    ></use>
+                  </svg>
+                  <input type="email" name="email" />
+                </div>
+              </div>
+
+              <div class="comment">
+                <label for="Comment">Comment</label>
+              </div>
+              <div class="comment">
+                <textarea
+                  name="Comment"
+                  id="Comment"
+                  placeholder="Text input"
+                ></textarea>
+              </div>
+
+              <div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" />
+                    I accept the terms and conditions of the
+                    <a href="#" target="_blank">Privacy Policy</a>
+                  </label>
+                </div>
+              </div>
+              <button type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="container1">
+        <ul>
+          <li>
+            <svg class="icon">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-strtgy"
+              ></use>
+            </svg>
+            <h3>Strategy</h3>
+            <p>
+              Our goal is identify the business problem to walk away with the
+              perfect and creative solution.
+            </p>
+          </li>
+
+          <li>
+            <svg class="icon">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-clock-1"
+              ></use>
+            </svg>
+            <h3>Punctuality</h3>
+            <p>
+              Bring the key message to the brands audience for the best price
+              within the shortest possible time.
+            </p>
+          </li>
+
+          <li>
+            <svg class="icon">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-dlgnc"
+              ></use>
+            </svg>
+            <h3>Diligence</h3>
+            <p>
+              Research and confirm brands with the strongest digital growth
+              opportunities and minimize risk.
+            </p>
+          </li>
+
+          <li>
+            <svg class="icon">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-tech"
+              ></use>
+            </svg>
+            <h3>Technologies</h3>
+            <p>
+              Design practice focused on digital experiences. We bring forth a
+              deep passion for problem-solving.
+            </p>
+          </li>
+        </ul>
+      </section>
+      <section class="containerot">
+        <h2>Our Team</h2>
+        <ul class="ourteam">
+          <li class="ot">
+            <img src="images/img1.jpg" alt="Mark Guerrero" width="264" />
+            <h4 class="ozet">Mark Guerrero</h4>
+            <p>Product Designer</p>
+            <svg class="iconot">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-insta"
+              ></use>
+            </svg>
+            <svg class="iconot">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-twtr"
+              ></use>
+            </svg>
+            <svg class="iconot">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-face"
+              ></use>
+            </svg>
+            <svg class="iconot">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-lnkd"
+              ></use>
+            </svg>
+          </li>
+
+          <li class="ot">
+            <img src="images/img2.jpg" alt="Tom Ford" width="264" />
+            <h4 class="ozet">Tom Ford</h4>
+            <p>Frontend Developer</p>
+            <svg class="iconot">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-insta"
+              ></use>
+            </svg>
+            <svg class="iconot">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-twtr"
+              ></use>
+            </svg>
+            <svg class="iconot">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-face"
+              ></use>
+            </svg>
+            <svg class="iconot">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-lnkd"
+              ></use>
+            </svg>
+          </li>
+
+          <li class="ot">
+            <img src="images/img3.jpg" alt="Camila Garcia" width="264" />
+            <h4 class="ozet">Camila Garcia</h4>
+            <p>Marketing</p>
+            <svg class="iconot">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-insta"
+              ></use>
+            </svg>
+            <svg class="iconot">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-twtr"
+              ></use>
+            </svg>
+            <svg class="iconot">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-face"
+              ></use>
+            </svg>
+            <svg class="iconot">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-lnkd"
+              ></use>
+            </svg>
+          </li>
+
+          <li class="ot">
+            <img src="images/img4.jpg" alt="Daniel Wilson" width="264" />
+            <h4 class="ozet">Daniel Wilson</h4>
+            <p>UI Designer</p>
+            <svg class="iconot">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-insta"
+              ></use>
+            </svg>
+            <svg class="iconot">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-twtr"
+              ></use>
+            </svg>
+            <svg class="iconot">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-face"
+              ></use>
+            </svg>
+            <svg class="iconot">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-lnkd"
+              ></use>
+            </svg>
+          </li>
+        </ul>
+      </section>
+      <section class="containerop">
+        <h2>Our Portfolio</h2>
+        <ul class="ourport">
+          <li class="border">
+            <div class="portcont">
+              <img src="images/our1.jpg" alt="Banking App" width="360" />
+              <p class="overlay">
+                14 Stylish and User-Friendly App Design Concepts · Task Manager
+                App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud
+                Storage App
+              </p>
+            </div>
+            <h4 class="ozellik">Banking App</h4>
+            <p>App</p>
+          </li>
+
+          <li class="border">
+            <div class="portcont">
+              <img
+                src="images/our2.jpg"
+                alt="Cashless Payment"
+                width="360"
+                height="300"
+              />
+              <p class="overlay">
+                14 Stylish and User-Friendly App Design Concepts · Task Manager
+                App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud
+                Storage App
+              </p>
+            </div>
+            <h4 class="ozellik">Cashless Payment</h4>
+            <p>Marketing</p>
+          </li>
+
+          <li class="border">
+            <div class="portcont">
+              <img
+                src="images/our3.jpg"
+                alt="Meditation App"
+                width="360"
+                height="300"
+              />
+              <p class="overlay">
+                14 Stylish and User-Friendly App Design Concepts · Task Manager
+                App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud
+                Storage App
+              </p>
+            </div>
+            <h4 class="ozellik">Meditation App</h4>
+            <p>App</p>
+          </li>
+
+          <li class="border">
+            <div class="portcont">
+              <img src="images/our4.jpg" alt="Taxi Service" width="360" />
+              <p class="overlay">
+                14 Stylish and User-Friendly App Design Concepts · Task Manager
+                App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud
+                Storage App
+              </p>
+            </div>
+            <h4 class="ozellik">Taxi Service</h4>
+            <p>Marketing</p>
+          </li>
+
+          <li class="border">
+            <div class="portcont">
+              <img
+                src="images/our5.jpg"
+                alt="Screen Illustrations"
+                width="360"
+              />
+              <p class="overlay">
+                14 Stylish and User-Friendly App Design Concepts · Task Manager
+                App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud
+                Storage App
+              </p>
+            </div>
+            <h4 class="ozellik">Screen Illustrations</h4>
+            <p>Design</p>
+          </li>
+
+          <li class="border">
+            <div class="portcont">
+              <img src="images/our6.jpg" alt="Online Courses" width="360" />
+              <p class="overlay">
+                14 Stylish and User-Friendly App Design Concepts · Task Manager
+                App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud
+                Storage App
+              </p>
+            </div>
+            <h4 class="ozellik">Online Courses</h4>
+            <p>Marketing</p>
+          </li>
+        </ul>
+      </section>
+      <footer class="ft">
+        <!--logo başlangıc-->>
+        <div class="containerft">
+          <div class="logo1">
+            <span class="web">WEB</span><span class="Studio1">STUDIO</span>
+
+            <!--logo bitis-->
+            <p class="foot">
+              Increase the flow of customers and sales for your business with
+              digital marketing & growth solutions.
+            </p>
+          </div>
+          <div class="footsocial">
+            <p class="foot">Social media</p>
+            <svg class="iconft">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-insta"
+              ></use>
+            </svg>
+            <svg class="iconft">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-twtr"
+              ></use>
+            </svg>
+            <svg class="iconft">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-face"
+              ></use>
+            </svg>
+            <svg class="iconft">
+              <use
+                xlink:href="images/icons.svg/symbol-defs.svg#icon-lnkd"
+              ></use>
+            </svg>
+          </div>
+          <div class="subscribe">
+            <form>
+              <div class="lain">
+                <label for="email">Subscribe</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="E-mail"
+                />
+              </div>
+              <div class="submit">
+                <button type="submit">
+                  Subscribe
+                  <svg class="iconsbsc">
+                    <use
+                      xlink:href="images/icons.svg/symbol-defs.svg#icon-send"
+                    ></use>
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
