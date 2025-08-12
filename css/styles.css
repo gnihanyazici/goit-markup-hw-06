@@ -50,10 +50,6 @@ body {
     text-decoration: none;
 } 
 
-.menu a {
-    position: relative;
-    text-decoration: none;
-}
 
 
 ul {
@@ -61,13 +57,6 @@ ul {
     list-style-type: none;
     gap: 20px;
     justify-content: center;
-}
-
-.adres {
-    gap: 20px;
-    display: flex;
-    flex-direction: row-reverse;
-    text-decoration: none;
 }
 
 
@@ -167,20 +156,6 @@ button:focus {
     color: #434455;
 }
 
-.ozet {
-    display: flex;
-    color: #2E2F42;
-    font-family: "roboto";
-    font-weight: "medium";
-    font-size: 20px;
-    line-height: 1,2;
-    margin-bottom: 8px;
-    background-color: #FFFFFF;
-    text-align: center;
-    
-}
-
-
 h1,
 h2,
 h3,
@@ -215,7 +190,7 @@ ul {
     max-width: 1158px;
     justify-content: center;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column-reverse;  
     text-align: center;
 }
 
@@ -254,9 +229,12 @@ ul {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    margin: 0 auto;
     max-width: 1158px;
     display: flex;
+    position: relative;
+    box-sizing: border-box;
+    padding: 16px;
+    
 }
 .ourport {
     display: grid;
@@ -268,6 +246,8 @@ ul {
 
 .border{
     border: 1px solid #e7e9fc;
+    width: 288px;
+        height: 400px;
     
 }
 
@@ -305,6 +285,7 @@ ul {
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateY(100%);
     margin: 0;
+    display: none;
 }
 
 h2 {
@@ -322,7 +303,6 @@ h2 {
     width: 320px;
     height: auto;
     max-width: 1158px;
-    margin: 0 auto;
     position: relative;
     display: flex;
     align-items: flex-start;
@@ -335,10 +315,9 @@ h2 {
 .containerft{
     display: flex;
     align-items: baseline;
-    gap: 80px;
+    gap: 72px;
     flex-direction: column;
     text-align: center;
-    gap: 16px;
 }
 
 .ft .foot {
@@ -363,7 +342,7 @@ h2 {
     color: #4D5AE5;
 }
 
-.logo1 .studio1 {
+.studio1 {
     color: #F4F4FD;
 }
 
@@ -656,7 +635,7 @@ h2 {
 
 .menu-button {
     cursor: pointer;
-    display: none;
+    display: block;
 }
 
 .icon-close {
@@ -767,16 +746,16 @@ h2 {
 }
 
 
-
-@media (min-width:320px) and (max-width:768){
-  .menu-button{
-    display: block;
-  }
-
 #mobile-menu-checkbox:checked~.mobile-nav {
     opacity: 1;
     visibility: visible;
 }
+
+@media (min-width:768){
+  .menu-button{
+    display: none;
+  }
+
 
 
 }
