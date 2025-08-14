@@ -10,19 +10,43 @@
     />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body>
+  <body class="container">
     <input type="checkbox" id="mobile-menu-checkbox" hidden />
-    <header class="m-container">
-      <div class="logo">
-        <span class="web">WEB</span><span class="Studio">STUDIO</span>
+    <header>
+      <div class="m-container">
+        <div class="logo">
+          <span class="web">WEB</span><span class="Studio">STUDIO</span>
+        </div>
+        <label for="mobile-menu-checkbox" class="menu-button">
+          <svg class="hero-icons">
+            <use
+              xlink:href="images/icons.svg/symbol-defs.svg#icon-heroicons"
+            ></use>
+          </svg>
+        </label>
       </div>
-      <label for="mobile-menu-checkbox" class="menu-button">
-        <svg class="hero-icons">
-          <use
-            xlink:href="images/icons.svg/symbol-defs.svg#icon-heroicons"
-          ></use>
-        </svg>
-      </label>
+      <div class="containerx">
+        <!--logo başlangıc-->
+        <div class="logo">
+          <span class="web">WEB</span><span class="Studio">STUDIO</span>
+        </div>
+        <!--logo bitis-->
+        <!--menu başlangıc-->
+        <nav class="desktop-menu">
+          <ul class="menu">
+            <li><a href="#" class="active">Studio</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <!--menu bitti-->
+        <!--iletisim baslangıc-->
+        <address class="adres">
+          <a href="#">info@devstudio.com</a>
+          <a href="#">+11(000)111-11-11</a>
+        </address>
+        <!--iletisim bitti-->
+      </div>
     </header>
     <nav class="mobile-nav">
       <label for="mobile-menu" class="menu-close">
@@ -297,7 +321,12 @@
         <ul class="ourport">
           <li class="border">
             <div class="portcont">
-              <img src="images/our1.jpg" alt="Banking App" width="288" />
+              <img
+                src="images/our1.jpg"
+                alt="Banking App"
+                width="288"
+                height="300"
+              />
               <p class="overlay">
                 14 Stylish and User-Friendly App Design Concepts · Task Manager
                 App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud
@@ -313,8 +342,8 @@
               <img
                 src="images/our2.jpg"
                 alt="Cashless Payment"
-                width="360"
-                height="300"
+                width="288"
+                height="280"
               />
               <p class="overlay">
                 14 Stylish and User-Friendly App Design Concepts · Task Manager
@@ -331,8 +360,8 @@
               <img
                 src="images/our3.jpg"
                 alt="Meditation App"
-                width="360"
-                height="300"
+                width="288"
+                height="280"
               />
               <p class="overlay">
                 14 Stylish and User-Friendly App Design Concepts · Task Manager
@@ -346,7 +375,12 @@
 
           <li class="border">
             <div class="portcont">
-              <img src="images/our4.jpg" alt="Taxi Service" width="288" />
+              <img
+                src="images/our4.jpg"
+                alt="Taxi Service"
+                width="288"
+                height="280"
+              />
               <p class="overlay">
                 14 Stylish and User-Friendly App Design Concepts · Task Manager
                 App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud
@@ -363,6 +397,7 @@
                 src="images/our5.jpg"
                 alt="Screen Illustrations"
                 width="288"
+                height="280"
               />
               <p class="overlay">
                 14 Stylish and User-Friendly App Design Concepts · Task Manager
@@ -376,7 +411,12 @@
 
           <li class="border">
             <div class="portcont">
-              <img src="images/our6.jpg" alt="Online Courses" width="288" />
+              <img
+                src="images/our6.jpg"
+                alt="Online Courses"
+                width="288"
+                height="280"
+              />
               <p class="overlay">
                 14 Stylish and User-Friendly App Design Concepts · Task Manager
                 App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud
