@@ -1,50 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
+/* =========================================
+   DEĞİŞKENLER & TEMEL AYARLAR (Mobile First)
+   ========================================= */
 :root {
-  /* Renk Paleti (Modern WebStudio temasına uygun varsayılanlar) */
-  --primary-brand: #4d5ae5; /* Iris */
-  --pressed-state: #404bbf; /* Ocean */
-  --dark: #2e2f42; /* Navy Blue - Başlıklar */
-  --success: #31d0aa;
-  --text: #434455; /* Slate - Paragraf */
-  --subtle-text: #8e8f99; /* Light Slate */
-  --accent: #e7e9fc; /* Cornflower - Border */
-  --light: #f4f4fd; /* Cloud - Arkaplan */
-  --modal-overlay: rgba(46, 47, 66, 0.4);
-  --hero-bg: #2e2f42;
-  --white: #ffffff;
-  
-  /* Animasyon */
-  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* Renk Paleti (Orijinal Tasarım Sistemi) */
+  --iris: #4d5ae5;
+  --ocean: #404bbf;
+  --navy-blue: #2e2f42;
+  --green: #31d0aa;
+  --slate: #434455;
+  --light-slate: #8e8f99;
+  --cornflower: #e7e9fc;
+  --cloud: #f4f4fd;
+  --navy-blue-modal: rgba(46, 47, 66, 0.4);
+  --grey: rgba(46, 47, 66, 0.7);
+  --white: #fff;
+  --dairy: #fcfcfc;
+
+  /* Tipografi */
+  --font-family: "Roboto", sans-serif;
+  --second-family: "Raleway", sans-serif;
+
+  /* Animasyonlar */
+  --transition-dur-and-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* -------------------------------------------------- */
-/* 1. RESET & BASE STYLES (Temel Ayarlar) */
-/* -------------------------------------------------- */
-
 body {
-  font-family: 'Roboto', sans-serif;
-  color: var(--text);
+  font-family: var(--font-family);
+  color: var(--slate);
   background-color: var(--white);
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
-ul, ol {
+ul {
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 a {
   text-decoration: none;
-  color: currentColor;
+  color: inherit;
 }
 
 img {
@@ -53,40 +52,42 @@ img {
   height: auto;
 }
 
-button {
-  cursor: pointer;
-  border: none;
-  font-family: inherit;
+/* =========================================
+   ORTAK KONTEYNERLER (B2: 320px, 768px, 1158px)
+   ========================================= */
+.m-container,
+.containerx,
+.container1,
+.containerot,
+.containerop,
+.containerft {
+  min-width: 320px;
+  max-width: 428px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
-/* Container mantığı - Tüm içerikleri ortalar */
-.container, .m-container, .containerx, .container1, .containerot, .containerop, .containerft {
-  width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 428px; /* Mobil Max Genişlik */
+@media screen and (min-width: 768px) {
+  .m-container, .containerx, .container1, .containerot, .containerop, .containerft {
+    max-width: 768px;
+  }
 }
 
-/* Section genel boşlukları */
-section {
-  padding-top: 96px;
-  padding-bottom: 96px;
+@media screen and (min-width: 1158px) {
+  .m-container, .containerx, .container1, .containerot, .containerop, .containerft {
+    max-width: 1158px;
+    padding: 0 15px;
+  }
 }
 
-/* -------------------------------------------------- */
-/* 2. HEADER (Mobil Görünüm) */
-/* -------------------------------------------------- */
-
+/* =========================================
+   HEADER & LOGO
+   ========================================= */
 header {
-  border-bottom: 1px solid var(--accent);
-  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08);
-}
-
-/* Mobilde Desktop Menüyü Gizle */
-.desktop-menu, .adres, .containerx {
-  display: none;
+  border-bottom: 1px solid var(--cornflower);
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 
+              0px 1px 1px rgba(46, 47, 66, 0.16), 
+              0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .m-container {
@@ -97,59 +98,138 @@ header {
   padding-bottom: 24px;
 }
 
-/* Logo Stilleri */
 .logo, .logo1 {
-  font-family: 'Raleway', sans-serif;
+  font-family: var(--second-family);
   font-weight: 800;
   font-size: 18px;
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: var(--primary-brand);
+}
+
+.web {
+  color: var(--iris);
 }
 
 .Studio {
-  color: var(--dark);
+  color: var(--navy-blue);
 }
 
 .Studio1 {
-  color: var(--light);
+  color: var(--cloud);
 }
 
-/* Hamburger Menü Butonu */
+.containerx {
+  display: none;
+}
+
 .menu-button {
   background: transparent;
   border: none;
-  padding: 0;
-  line-height: 0;
+  cursor: pointer;
 }
 
 .hero-icons {
   width: 32px;
   height: 22px;
-  stroke: var(--dark);
+  stroke: var(--navy-blue);
 }
 
-/* -------------------------------------------------- */
-/* 3. MOBILE MENU (Overlay) */
-/* -------------------------------------------------- */
+@media screen and (min-width: 768px) {
+  .m-container { display: none; }
+  
+  .containerx {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .desktop-menu .menu {
+    display: flex;
+    gap: 40px;
+  }
+  
+  .desktop-menu a {
+    display: block;
+    padding: 24px 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--navy-blue);
+    position: relative;
+    transition: color var(--transition-dur-and-func);
+  }
+  
+  .desktop-menu a:hover,
+  .desktop-menu a:focus,
+  .desktop-menu a.active {
+    color: var(--ocean);
+  }
 
+  .desktop-menu a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 4px;
+    background-color: var(--ocean);
+    border-radius: 2px;
+  }
+
+  .adres {
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .adres a {
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.04em;
+    color: var(--slate);
+    transition: color var(--transition-dur-and-func);
+  }
+
+  .adres a:hover, .adres a:focus {
+    color: var(--iris);
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .logo { margin-right: 76px; }
+  .adres {
+    flex-direction: row;
+    gap: 40px;
+  }
+  .adres a {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* =========================================
+   MOBİL MENÜ (CHECKBOX HACK)
+   ========================================= */
 .mobile-nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: var(--white);
-  padding: 40px;
+  z-index: 999;
+  padding: 80px 35px 40px 40px;
   display: flex;
   flex-direction: column;
-  z-index: 999;
-  transform: translateX(100%); /* Varsayılan olarak gizli */
-  transition: transform var(--transition);
+  transform: translateX(100%);
+  transition: transform var(--transition-dur-and-func);
+  overflow-y: auto;
 }
 
-/* Checkbox Hack: Checkbox işaretliyse menüyü göster */
 #mobile-menu-checkbox:checked ~ .mobile-nav {
   transform: translateX(0);
 }
@@ -161,17 +241,33 @@ header {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: var(--accent);
+  background-color: var(--cornflower);
   border: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: background-color var(--transition-dur-and-func), border var(--transition-dur-and-func);
+}
+
+.menu-close:hover,
+.menu-close:focus {
+  background-color: var(--ocean);
+  border-color: transparent;
+  color: var(--white);
+}
+
+.icon-close {
+  width: 8px;
+  height: 8px;
+  fill: currentColor;
 }
 
 .mobile-list {
-  margin-bottom: auto; /* Adresi aşağı iter */
-  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: auto;
 }
 
 .mobile-list li {
@@ -179,470 +275,154 @@ header {
   font-size: 36px;
   line-height: 1.11;
   letter-spacing: 0.02em;
-  color: var(--dark);
-  margin-bottom: 40px;
+  color: var(--navy-blue);
+  cursor: pointer;
 }
 
-.mobile-list li:first-child {
-  color: var(--pressed-state);
-}
+.mobile-list li:first-child { color: var(--ocean); }
 
 .mobile-adres {
-  font-style: normal;
   display: flex;
   flex-direction: column;
   gap: 40px;
+  font-style: normal;
   margin-bottom: 48px;
 }
 
-.mobile-adres a[href^="tel"] {
-  font-weight: 700;
-  font-size: 26px; /* Ekrana sığması için biraz küçülttüm */
-  color: var(--primary-brand);
-}
-
-.mobile-adres a[href^="mailto"] {
+.mobile-adres a:first-child {
   font-weight: 500;
   font-size: 20px;
-  color: var(--text);
+  line-height: 1.2;
+  color: var(--slate);
+}
+
+.mobile-adres a:last-child {
+  font-weight: 700;
+  font-size: 36px;
+  color: var(--iris);
 }
 
 .mobile-menu-social-icon {
   display: flex;
-  gap: 30px; /* Aralarındaki boşluk */
-  justify-content: flex-start;
+  gap: 56px;
 }
 
 .iconmen {
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: 40px;
   fill: var(--white);
-  background-color: var(--primary-brand);
+  background-color: var(--iris);
   border-radius: 50%;
-  padding: 4px; /* SVG boyutu + padding */
-  box-sizing: content-box;
+  padding: 8px;
 }
 
-/* -------------------------------------------------- */
-/* 4. HERO SECTION */
-/* -------------------------------------------------- */
+@media screen and (min-width: 768px) {
+  .mobile-nav { display: none; }
+}
 
+/* =========================================
+   HERO SECTİON (.baslik)
+   ========================================= */
 .baslik {
-  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url('/images/people-office1.jpg'); /* Mobil görsel varsayımı */
+  background-color: var(--navy-blue);
+  padding: 112px 0;
+  text-align: center;
+  background-image: linear-gradient(var(--grey), var(--grey)), url('../images/Dark-bg.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 112px 0;
-  text-align: center;
+  max-width: 428px;
+  margin: 0 auto;
+}
+
+@media screen and (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .baslik {
+    background-image: linear-gradient(var(--grey), var(--grey)), url('../images/Dark-bg.png');
+  }
 }
 
 .baslik h1 {
+  color: var(--white);
+  font-weight: 700;
   font-size: 36px;
   line-height: 1.11;
-  color: var(--white);
+  letter-spacing: 0.02em;
+  margin: 0 auto 72px;
   max-width: 320px;
-  margin: 0 auto 72px auto;
 }
 
 .baslik button[type="submit"] {
-  background-color: var(--primary-brand);
+  background-color: var(--iris);
   color: var(--white);
+  font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  padding: 16px 32px;
-  border-radius: 4px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  transition: background-color var(--transition);
-}
-
-.baslik button[type="submit"]:hover {
-  background-color: var(--pressed-state);
-}
-
-/* -------------------------------------------------- */
-/* 5. FEATURES SECTION (Strategy etc.) */
-/* -------------------------------------------------- */
-
-.container1 ul {
-  display: flex;
-  flex-direction: column;
-  gap: 72px;
-}
-
-.container1 .icon {
-  display: none; /* Mobilde ikonlar genellikle gizlenir veya tasarımda üstte olur */
-}
-
-.container1 h3 {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.11;
-  color: var(--dark);
-  margin-bottom: 8px;
-  text-align: center;
-}
-
-.container1 p {
-  font-weight: 500;
-  color: var(--text);
-}
-
-/* -------------------------------------------------- */
-/* 6. TEAM SECTION */
-/* -------------------------------------------------- */
-
-.containerot {
-  background-color: var(--light);
-}
-
-.containerot h2 {
-  font-size: 36px;
-  line-height: 1.11;
-  text-align: center;
-  letter-spacing: 0.02em;
-  color: var(--dark);
-  margin-bottom: 72px;
-}
-
-.ourteam {
-  display: flex;
-  flex-direction: column;
-  gap: 72px;
-  align-items: center;
-}
-
-.ot {
-  background-color: var(--white);
-  border-radius: 0px 0px 4px 4px;
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 
-              0px 1px 1px rgba(46, 47, 66, 0.16), 
-              0px 2px 1px rgba(46, 47, 66, 0.08);
-  width: 100%;
-  max-width: 264px;
-  padding-bottom: 32px;
-  text-align: center;
-}
-
-.ot img {
-  width: 100%;
-}
-
-.ozet {
-  margin-top: 32px;
-  margin-bottom: 8px;
-  font-weight: 500;
-  font-size: 20px;
-  color: var(--dark);
-}
-
-.ot p {
-  margin-bottom: 8px;
-}
-
-/* Takım Sosyal İkonları */
-.ot .iconot {
-  width: 16px;
-  height: 16px;
-  fill: var(--light);
-  background-color: var(--primary-brand);
-  border-radius: 50%;
-  padding: 12px;
-  box-sizing: content-box;
-  margin: 0 6px;
   cursor: pointer;
-  transition: background-color var(--transition);
-}
-
-.ot .iconot:hover {
-  background-color: var(--pressed-state);
-}
-
-/* -------------------------------------------------- */
-/* 7. PORTFOLIO SECTION */
-/* -------------------------------------------------- */
-
-.containerop h2 {
-  font-size: 36px;
-  line-height: 1.11;
-  text-align: center;
-  color: var(--dark);
-  margin-bottom: 72px;
-}
-
-.ourport {
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-}
-
-.border {
-  border: 1px solid var(--accent);
-  border-top: none; /* Resim üstte olduğu için */
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
-  transition: box-shadow var(--transition);
-}
-
-.border:hover {
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 
-              0px 1px 1px rgba(46, 47, 66, 0.16), 
-              0px 2px 1px rgba(46, 47, 66, 0.08);
-}
-
-.portcont {
-  position: relative;
-  overflow: hidden;
-}
-
-/* Overlay (Hover efekti) */
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--primary-brand);
-  color: var(--light);
-  padding: 40px 32px;
-  transform: translateY(100%);
-  transition: transform var(--transition);
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-.border:hover .overlay {
-  transform: translateY(0);
-}
-
-.ozellik {
-  padding: 32px 16px 0 16px;
-  margin-bottom: 8px;
-  font-weight: 500;
-  font-size: 20px;
-  color: var(--dark);
-}
-
-.border > p {
-  padding: 0 16px 32px 16px;
-  color: var(--text);
-}
-
-/* -------------------------------------------------- */
-/* 8. FOOTER (Görsele Uygun Mobile First) */
-/* -------------------------------------------------- */
-
-.ft {
-  background-color: var(--dark);
-  padding: 96px 0;
-}
-
-/* --- MOBILE GÖRÜNÜM --- */
-
-.containerft {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 72px;
-}
-
-/* --- 1. Logo ve Açıklama (KRİTİK DÜZELTME) --- */
-.logo1 {
-  /* Flexbox KULLANMIYORUZ. Block yaparak spanların yan yana kalmasını sağlıyoruz */
-  display: block; 
-  text-align: center; /* İçerikleri ortalar */
-}
-
-/* Logo Metni (WebStudio) */
-.logo1 .web {
-  color: var(--primary-brand);
-}
-
-.logo1 .Studio1 {
-  color: var(--light);
-}
-
-/* Logo Altındaki Açıklama Metni */
-.logo1 .foot {
-  color: var(--light);
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  max-width: 264px;
-  /* Block yapıda ortalamak için margin auto kullanıyoruz */
-  margin: 16px auto 0 auto; 
-  text-align: left; /* Metin kendi içinde sola dayalı */
-}
-
-/* --- 2. Sosyal Medya --- */
-.footsocial {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-
-.footsocial .foot {
-  font-weight: 500;
-  color: var(--white);
-  margin-bottom: 0;
-}
-
-.logo1 .foot {
-  color: var(--light);
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  max-width: 264px;
-  margin: 16px auto 0 auto;
-  text-align: left;
-  /* EKLENEN SATIR: Üstten gelen büyük harf özelliğini iptal eder */
-  text-transform: none; 
-}
-
-/* İkonların Yan Yana Dizilmesi */
-.footsocial-list, 
-.social-list,
-.footsocial div { 
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-}
-
-.iconft {
-  width: 40px;
-  height: 40px;
-  fill: var(--light);
-  background-color: var(--primary-brand);
-  border-radius: 50%;
-  padding: 4px;
-  box-sizing: border-box; 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.iconft:hover,
-.iconft:focus {
-  background-color: #31d0aa;
-}
-
-/* --- 3. Subscribe Formu --- */
-.subscribe {
-  width: 100%;
-}
-
-.subscribe form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.lain {
-  width: 100%;
-  display: flex;
-  flex-direction: column; /* Label üstte, Input altta */
-  align-items: center;
-  margin-bottom: 16px;
-}
-
-.subscribe label {
-  font-weight: 500;
-  color: var(--white);
-  margin-bottom: 16px;
-  text-align: center;
-}
-
-.subscribe input {
-  width: 100%;
-  max-width: 398px;
-  height: 40px;
-  background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
-  color: var(--white);
-  padding-left: 16px;
-  font-size: 12px;
-  outline: none;
-}
-
-.subscribe input::placeholder {
-  color: #ffffff;
-}
-
-.submit {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.subscribe button {
-  min-width: 165px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: inherit;
-  font-weight: 500;
-  color: var(--white);
-  cursor: pointer;
-  background-color: var(--primary-brand);
   border: none;
   border-radius: 4px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 16px 32px;
+  transition: background-color var(--transition-dur-and-func);
 }
 
-.iconsbsc {
-  margin-left: 16px;
-  fill: var(--white);
-  width: 24px;
-  height: 24px;
+.baslik button[type="submit"]:hover,
+.baslik button[type="submit"]:focus {
+  background-color: var(--ocean);
 }
 
-/* -------------------------------------------------- */
-/* 9. MODAL (Pencere) */
-/* -------------------------------------------------- */
+@media screen and (min-width: 768px) {
+  .baslik { max-width: 768px; padding: 112px 0; background-image: linear-gradient(var(--grey), var(--grey)), url('../images/people-office1.jpg'); }
+  .baslik h1 { font-size: 56px; line-height: 1.07; margin-bottom: 36px; max-width: 496px; }
+}
 
+@media screen and (min-width: 1158px) {
+  .baslik { max-width: 1440px; padding: 188px 0; background-image: linear-gradient(var(--grey), var(--grey)), url('../images/people-office1.jpg');}
+  .baslik h1 { margin-bottom: 48px; }
+}
+
+/* =========================================
+   MODAL PENCERE (.backdrop)
+   ========================================= */
 .backdrop {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--modal-overlay);
-  transition: opacity var(--transition), visibility var(--transition);
-  
-  /* Varsayılan olarak gizli olması gerekir ama JS olmadan HTML'de durduğu için 
-     CSS ile gizleyip bir class ile açmak gerekir. Şimdilik görünür bırakıyorum 
-     veya JS ile "is-hidden" eklenmeli */
+  background-color: var(--navy-blue-modal);
   opacity: 0;
-  pointer-events: none;
   visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--transition-dur-and-func), visibility var(--transition-dur-and-func);
+  z-index: 1000;
 }
 
-/* Modal'ı göstermek için bu class JS ile eklenmeli: .backdrop.is-open */
 .backdrop.is-open {
   opacity: 1;
-  pointer-events: auto;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  width: 408px; /* Desktop */
+  transform: translate(-50%, -50%) scale(0.9);
+  width: calc(100% - 32px);
+  max-width: 392px;
   min-height: 584px;
-  background: #fcfcfc;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: var(--dairy);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 
+              0px 1px 3px rgba(0, 0, 0, 0.12), 
+              0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  transition: transform var(--transition-dur-and-func);
   padding: 72px 24px 24px 24px;
-  transition: transform var(--transition);
 }
 
-/* Mobilde modal genişliği */
-@media screen and (max-width: 428px) {
-  .modal {
-    width: 95%;
-  }
+.backdrop.is-open .modal {
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .modal-close {
@@ -652,48 +432,56 @@ header {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: #e7e9fc;
-  border: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--cornflower);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
   cursor: pointer;
-  transition: background-color var(--transition), border var(--transition);
+  transition: background-color var(--transition-dur-and-func), border var(--transition-dur-and-func);
 }
 
-.modal-close:hover {
-  background-color: var(--pressed-state);
-  fill: var(--white);
+.modal-close:hover,
+.modal-close:focus {
+  background-color: var(--ocean);
+  border: none;
 }
 
 .closeicon {
   width: 8px;
   height: 8px;
-  transition: fill var(--transition);
+  fill: var(--navy-blue);
+  transition: fill var(--transition-dur-and-func);
 }
 
-.modal-close:hover .closeicon {
+.modal-close:hover .closeicon,
+.modal-close:focus .closeicon {
   fill: var(--white);
 }
 
-/* Form İçeriği */
-.modal p {
-  text-align: center;
+.modal p:first-of-type {
   font-weight: 500;
-  color: var(--dark);
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--navy-blue);
   margin-bottom: 16px;
 }
 
 .formod {
   margin-bottom: 8px;
+  text-align: left;
 }
 
-.formod label {
+.formod label,
+.comment label {
+  display: block;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
-  color: var(--subtle-text);
-  display: block;
+  color: var(--light-slate);
   margin-bottom: 4px;
 }
 
@@ -709,11 +497,11 @@ header {
   background-color: transparent;
   padding-left: 38px;
   outline: transparent;
-  transition: border-color var(--transition);
+  transition: border-color var(--transition-dur-and-func);
 }
 
 .formin input:focus {
-  border-color: var(--primary-brand);
+  border-color: var(--iris);
 }
 
 .formsvg {
@@ -723,19 +511,20 @@ header {
   transform: translateY(-50%);
   width: 18px;
   height: 24px;
-  fill: var(--dark);
-  transition: fill var(--transition);
+  fill: var(--navy-blue);
+  transition: fill var(--transition-dur-and-func);
 }
 
 .formin input:focus + .formsvg {
-  fill: var(--primary-brand);
+  fill: var(--iris);
 }
 
 .comment {
   margin-bottom: 16px;
+  text-align: left;
 }
 
-textarea {
+.comment textarea {
   width: 100%;
   height: 120px;
   font-size: 12px;
@@ -748,317 +537,191 @@ textarea {
   padding: 8px 16px;
   outline: transparent;
   resize: none;
-  transition: border-color var(--transition);
+  transition: border-color var(--transition-dur-and-func);
 }
 
-textarea:focus {
-  border-color: var(--primary-brand);
+.comment textarea:focus {
+  border-color: var(--iris);
 }
 
 .checkbox {
   margin-bottom: 24px;
+  text-align: left;
 }
 
 .checkbox label {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
-  color: var(--subtle-text);
+  color: var(--light-slate);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--ocean);
 }
 
 .checkbox a {
-  color: var(--primary-brand);
+  color: var(--iris);
   text-decoration: underline;
 }
 
-/* ================================================== */
-/* TABLET MEDIA QUERY (min-width: 768px) */
-/* ================================================== */
+.modal form > button[type="submit"] {
+  display: block;
+  min-width: 169px;
+  height: 56px;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  cursor: pointer;
+  background-color: var(--iris);
+  border: none;
+  border-radius: 4px;
+  margin: 0 auto;
+  transition: background-color var(--transition-dur-and-func);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.modal form > button[type="submit"]:hover,
+.modal form > button[type="submit"]:focus {
+  background-color: var(--ocean);
+}
 
 @media screen and (min-width: 768px) {
-  /* Container Genişliği Güncellemesi */
-  .container, .m-container, .containerx, .container1, .containerot, .containerop, .containerft {
-    max-width: 768px;
-  }
-
-  /* Header: Mobil menüyü gizle, Desktop yapıyı göster */
-  .m-container {
-    display: none;
-  }
-
-  .containerx {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 15px; /* Yan padding */
-  }
-  
-  .desktop-menu, .adres {
-    display: block;
-  }
-
-  .menu {
-    display: flex;
-    gap: 40px;
-  }
-
-  .menu a {
-    font-weight: 500;
-    color: var(--dark);
-    padding: 24px 0;
-    display: block;
-    position: relative;
-    transition: color var(--transition);
-  }
-
-  .menu a.active {
-    color: var(--pressed-state);
-  }
-
-  .menu a.active::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    height: 4px;
-    background-color: var(--pressed-state);
-    border-radius: 2px;
-    width: 100%;
-  }
-
-  .adres {
-    font-style: normal;
-  }
-
-  .adres a {
-    display: block;
-    font-size: 12px;
-    line-height: 1.17;
-    color: var(--text);
-  }
-  
-  /* Hero */
-  .baslik {
-    padding: 112px 0;
-  }
-  
-  .baslik h1 {
-    font-size: 56px;
-    line-height: 1.07;
-    max-width: 496px;
-  }
-
-  /* Features - 2 Kolonlu Yapı */
-  .container1 ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 24px; /* Kolonlar arası boşluk */
-    row-gap: 72px; /* Satırlar arası boşluk */
-  }
-
-  .container1 li {
-    width: calc((100% - 24px) / 2); /* 2 kolon */
-  }
-
-  .container1 h3 {
-    text-align: left;
-  }
-
-  /* Team - 2 Kolonlu Yapı */
-  .ourteam {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 24px;
-    row-gap: 64px;
-    justify-content: center;
-  }
-
-  .ot {
-    width: calc((100% - 24px) / 2);
-    max-width: 264px;
-  }
-
-  /* Portfolio - 2 Kolonlu Yapı */
-  .ourport {
-    flex-direction: row;
-    flex-wrap: wrap;
-    column-gap: 24px;
-    row-gap: 72px;
-  }
-
-  .border {
-    width: calc((100% - 24px) / 2);
-  }
-
-  /* Footer - Flex düzeni (Tablet için özel hizalama) */
-  .containerft {
-    flex-direction: row;
-    flex-wrap: wrap; /* Sığmayan aşağı kaysın */
-    align-items: baseline; 
-    justify-content: flex-start;
-    padding-left: 108px; /* Görseldeki sol boşluk */
-    gap: 0; /* Gap'i sıfırlayıp margin ile yöneteceğiz */
-  }
-
-  /* 1. Logo */
-  .logo1 {
-    align-items: flex-start; /* Sola yasla */
-    margin-right: 24px;
-    margin-bottom: 72px; /* Alt satıra geçecek form ile mesafe */
-  }
-  
-  .logo1 .foot {
-    text-align: left;
-  }
-
-  /* 2. Sosyal Medya */
-  .footsocial {
-    align-items: flex-start; /* Sola yasla */
-    margin-bottom: 72px; /* Alt satıra geçecek form ile mesafe */
-  }
-  
-  .footsocial .foot {
-    text-align: left;
-  }
-
-  /* HTML'de ikonları saran bir div yoksa, CSS ile ikonları yan yana zorlayamayız.
-     Ancak display:flex ve row kullanarak ikon grubunu yönetebiliriz. */
-  
-  /* 3. Subscribe Formu */
-  .subscribe {
-    width: auto;
-  }
-
-  .subscribe label {
-    text-align: left; /* Sola yasla */
-  }
-
-  .subscribe form {
-    flex-direction: row; /* Tablette yan yana olsun */
-    align-items: flex-end; /* Buton aşağıda input hizasında */
-    gap: 24px;
-  }
-
-  .lain {
-    margin-bottom: 0;
-    width: auto;
-    display: block; /* Flex'ten çıkar */
-  }
-
-  .subscribe input {
-    width: 264px;
-  }
-
-  .submit {
-    width: auto;
+  .modal {
+    width: 408px;
+    max-width: 408px;
   }
 }
 
-/* ================================================== */
-/* DESKTOP MEDIA QUERY (min-width: 1158px) */
-/* ================================================== */
+/* =========================================
+   ÖZELLİKLER (.container1)
+   ========================================= */
+.container1 { padding: 96px 16px; }
+.container1 ul { display: flex; flex-direction: column; gap: 72px; }
+.container1 li { width: 100%; }
+.container1 .icon { display: none; }
+.container1 h3 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--navy-blue);
+  margin-bottom: 8px;
+}
+.container1 p { font-weight: 500; font-size: 16px; line-height: 1.5; letter-spacing: 0.02em; }
+
+@media screen and (min-width: 768px) {
+  .container1 ul { flex-direction: row; flex-wrap: wrap; gap: 72px 24px; }
+  .container1 li { width: calc((100% - 24px) / 2); }
+  .container1 h3 { text-align: left; }
+}
+@media screen and (min-width: 1158px) {
+  .container1 { padding: 120px 15px; }
+  .container1 ul { gap: 24px; }
+  .container1 li { width: calc((100% - 72px) / 4); }
+  .container1 .icon { display: block; width: 264px; height: 112px; background-color: var(--cloud); border-radius: 4px; padding: 24px 100px; margin-bottom: 8px; }
+  .container1 h3 { font-weight: 500; font-size: 20px; line-height: 1.2; }
+  .container1 p { font-weight: 400; }
+}
+
+/* =========================================
+   TEAM (.containerot)
+   ========================================= */
+.containerot { padding: 96px 16px; background-color: var(--cloud); max-width: 100%;}
+.containerot h2 { font-weight: 700; font-size: 36px; line-height: 1.11; text-align: center; letter-spacing: 0.02em; color: var(--navy-blue); margin-bottom: 72px; text-transform: capitalize; }
+.ourteam { display: flex; flex-direction: column; align-items: center; gap: 72px; }
+.ot {
+  background-color: var(--white);
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  padding-bottom: 32px;
+  text-align: center;
+  width: 264px;
+}
+.ozet { font-weight: 500; font-size: 20px; line-height: 1.2; letter-spacing: 0.02em; color: var(--navy-blue); margin: 32px 0 8px; }
+.ot p { font-size: 16px; line-height: 1.5; letter-spacing: 0.02em; margin-bottom: 8px; }
+.iconot { width: 40px; height: 40px; fill: var(--cloud); background-color: var(--iris); border-radius: 50%; padding: 4px; display: inline-block; margin: 0 4px; cursor: pointer; transition: background-color var(--transition-dur-and-func); }
+.iconot:hover,
+.iconot:focus { background-color: var(--ocean); }
+
+@media screen and (min-width: 768px) {
+  .ourteam { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 64px 24px; }
+}
+@media screen and (min-width: 1158px) {
+  .containerot { padding: 120px 15px; }
+  .ourteam { gap: 24px; }
+}
+
+/* =========================================
+   PORTFOLIO (.containerop)
+   ========================================= */
+.containerop { padding: 96px 16px; }
+.containerop h2 { font-weight: 700; font-size: 36px; line-height: 1.11; text-align: center; letter-spacing: 0.02em; color: var(--navy-blue); margin-bottom: 72px; text-transform: capitalize;}
+.ourport { display: flex; flex-direction: column; gap: 48px; }
+.border { background: var(--white); transition: box-shadow var(--transition-dur-and-func); border: 1px solid var(--cornflower); border-top: none; padding-bottom: 32px; }
+.portcont { position: relative; overflow: hidden; margin-bottom: 32px; }
+.overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--iris); color: var(--cloud); padding: 40px 32px; transform: translateY(100%); transition: transform var(--transition-dur-and-func); }
+.border:hover .overlay { transform: translateY(0); }
+.border:hover { box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08); }
+.ozellik { font-weight: 500; font-size: 20px; line-height: 1.2; letter-spacing: 0.02em; color: var(--navy-blue); margin: 0 16px 8px; }
+.border p:not(.overlay) { font-size: 16px; line-height: 1.5; letter-spacing: 0.02em; margin: 0 16px; color: var(--slate); }
+
+@media screen and (min-width: 768px) {
+  .ourport { flex-direction: row; flex-wrap: wrap; gap: 72px 24px; }
+  .border { width: calc((100% - 24px) / 2); }
+}
+@media screen and (min-width: 1158px) {
+  .containerop { padding: 120px 15px; }
+  .ourport { gap: 48px 24px; }
+  .border { width: calc((100% - 48px) / 3); }
+}
+
+/* =========================================
+   FOOTER (.ft)
+   ========================================= */
+.ft { background-color: var(--navy-blue); padding: 96px 0; }
+.containerft { display: flex; flex-direction: column; align-items: center; gap: 72px; }
+.logo1 { text-align: center; }
+.logo1 .web { color: var(--iris); }
+.foot { color: var(--cloud); line-height: 1.5; letter-spacing: 0.02em; margin-top: 16px; max-width: 268px; text-align: left; text-transform: none; font-weight: 400;}
+
+.footsocial .foot { font-weight: 500; color: var(--white); text-align: center; margin-bottom: 16px; margin-top: 0;}
+.iconft { width: 40px; height: 40px; fill: var(--cloud); background-color: var(--iris); border-radius: 50%; padding: 8px; transition: background-color var(--transition-dur-and-func); cursor: pointer; }
+.iconft:hover,
+.iconft:focus { background-color: var(--green); }
+
+.subscribe form { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.lain label { font-weight: 500; font-size: 16px; line-height: 1.5; letter-spacing: 0.02em; color: var(--white); margin-bottom: 16px; display: block; text-align: center; }
+.lain input { width: 100%; min-width: 288px; height: 40px; border: 1px solid rgba(255, 255, 255, 0.3); background-color: transparent; border-radius: 4px; padding-left: 16px; color: var(--white); font-size: 12px; }
+.lain input::placeholder { color: rgba(255, 255, 255, 0.6); }
+
+.submit button { display: flex; justify-content: center; align-items: center; width: 165px; height: 40px; background-color: var(--iris); color: var(--white); font-weight: 500; font-size: 16px; line-height: 1.5; letter-spacing: 0.04em; border: none; border-radius: 4px; cursor: pointer; transition: background-color var(--transition-dur-and-func); }
+.submit button:hover,
+.submit button:focus { background-color: var(--ocean); }
+.iconsbsc { margin-left: 16px; fill: var(--white); width: 24px; height: 24px; }
+
+@media screen and (min-width: 768px) {
+  .containerft { flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 72px 24px; padding-left: 108px; }
+  .logo1 { text-align: left; }
+  .footsocial .foot { text-align: left; }
+  .lain label { text-align: left; }
+  .subscribe form { flex-direction: row; gap: 24px; align-items: flex-end;}
+  .lain input { width: 264px; min-width: 264px; }
+}
 
 @media screen and (min-width: 1158px) {
-  /* Container Genişliği Güncellemesi */
-  .container, .m-container, .containerx, .container1, .containerot, .containerop, .containerft {
-    max-width: 1158px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  
-  section {
-    padding-top: 120px;
-    padding-bottom: 120px;
-  }
-
-  /* Header Adres Düzeltmesi (Yanyana) */
-  .adres {
-    display: flex;
-    gap: 40px;
-  }
-  
-  .adres a {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  /* Hero */
-  .baslik {
-    padding: 188px 0;
-  }
-
-  /* Features - 4 Kolonlu Yapı */
-  .container1 ul {
-    flex-wrap: nowrap;
-    gap: 24px;
-  }
-  
-  .container1 li {
-    width: calc((100% - 72px) / 4);
-  }
-  
-  .container1 .icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 112px;
-    background-color: var(--light);
-    border-radius: 4px;
-    margin-bottom: 8px;
-  }
-
-  .container1 h3 {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.2;
-  }
-
-  .container1 p {
-    font-weight: 400;
-  }
-
-  /* Team - 4 Kolonlu Yapı */
-  .ourteam {
-    flex-wrap: nowrap;
-    gap: 24px;
-  }
-  
-  .ot {
-    width: calc((100% - 72px) / 4);
-  }
-
-  /* Portfolio - 3 Kolonlu Yapı */
-  .ourport {
-    row-gap: 48px;
-  }
-
-  .border {
-    width: calc((100% - 48px) / 3);
-  }
-
-  /* Footer - Tek satır */
-.containerft {
-    max-width: 1158px;
-    padding-left: 15px;
-    padding-right: 15px;
-    flex-wrap: nowrap; /* Tek satır zorunlu */
-    justify-content: center; /* Ortala veya space-between yerine margin ile yapı */
-  }
-
-  .logo1 {
-    margin-right: 120px;
-    margin-bottom: 0;
-  }
-
-  .footsocial {
-    margin-right: 80px;
-    margin-bottom: 0;
-  }
-
-  .subscribe {
-    margin-left: auto; /* Sağa itmek gerekirse */
-    margin-left: 0;
-  }
+  .ft { padding: 120px 0; }
+  .containerft { flex-wrap: nowrap; gap: 0; padding-left: 15px; }
+  .logo1 { margin-right: 120px; }
+  .footsocial { margin-right: 80px; }
 }
-  /* Input ve Buton hizalaması (row yapısı) zaten Tablet query'sinden miras alınıyor, 
-     burada tekrar yazmaya gerek yok. Input genişliği de 264px olarak kalır. */
